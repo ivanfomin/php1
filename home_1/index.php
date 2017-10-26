@@ -41,4 +41,3 @@ var_dump($x); //bool(false)
 echo true xor true; //ничего - то есть false
 echo false xor true; //1 - то есть true
 
-//может какая новая фича 7.2 )))
