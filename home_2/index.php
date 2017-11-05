@@ -111,6 +111,7 @@ function disc($a, $b, $c)
 var_dump(disc(1, 3, 2));  //array(2) { [0]=> float(-1) [1]=> float(-2) }
 var_dump(disc(1, 2, 3));  //NULL
 var_dump(disc(2, -4, 2));   //array(2) { [0]=> float(4) [1]=> float(4) }
+//assert у себя на ubuntu что-то не получается задействовать
 ?>
 
 <!---------------------------------------------------------->
