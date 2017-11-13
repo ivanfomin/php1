@@ -3,14 +3,7 @@
 function arrFiles($path)
 {
     $files = scandir($path);
-    $correctFiles = [];
-    foreach ($files as $file) {
-        if ($file == '.' || $file == '..') {
-            continue;
-        } else {
-            $correctFiles[] = $file;
-        }
-    }
+    $correctFiles = array_diff($files, ['.', '..']);
     return $correctFiles;
 }
 
