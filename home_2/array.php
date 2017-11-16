@@ -1,3 +1,3 @@
 <?php
 
-return [A, B, 'C'];
+return ['A', 'B', 'C'];
