@@ -18,11 +18,12 @@ include_once __DIR__ . '/functions.php';
 <div>
     <ul>
         <?php
+        $num = 1;   //image number
         $images = arrFiles(__DIR__ . '/images');
         foreach ($images as $image) {
             ?>
             <li>
-                <a href="image.php?file=<?php echo $image; ?>"><img src="images/<?php echo $image; ?>"></a>
+                <a href="image.php?num=<?php echo $num++; ?>"><img src="images/<?php echo $image; ?>"></a>
             </li>
             <?php
         }

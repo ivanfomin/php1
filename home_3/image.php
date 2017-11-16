@@ -1,10 +1,10 @@
 <?php
 
-$fileName = $_GET['file'] ?? 0;
+$number = $_GET['num'] ?? 0;
 
-if (0 != $fileName) {
+if (0 != $number) {
     ?>
-    <img src="images/<?php echo $fileName; ?>">
+    <img src="images/<?php echo $number . '.jpg'; ?>">
     <br>
     <a href="index.html">Назад</a>
     <?php
