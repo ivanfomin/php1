@@ -14,7 +14,7 @@ function calc($a, $b, $sign)
             $res = $a * $b;
             break;
         case  '/':
-            if (0 == $b) {
+             if (0 == $b) {
                 $res = 0;
             } else
                 $res = $a / $b;
