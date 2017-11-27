@@ -13,7 +13,7 @@ include_once __DIR__ . '/functions.php';
 <body>
 
 <?php
-$lists = readFiles('guestBook.txt');
+$lists = readFiles(__DIR__ . '/guestBook.txt');
 if (!is_null($lists)) {
     ?>
     <ol>
@@ -31,12 +31,12 @@ if (!is_null($lists)) {
 }
 ?>
 
-<form method="post" action="writeList.php">
+<form method="post" action="writeData.php">
     <input type="text" name="record">
     <input type="submit">
 </form>
 <br>
-<form method="post" action="writeFiles.php" enctype="multipart/form-data">
+<form method="post" action="writeData.php" enctype="multipart/form-data">
     <input type="file" name="myFile">
     <input type="submit">
 </form>

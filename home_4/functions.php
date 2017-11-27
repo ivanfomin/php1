@@ -2,9 +2,8 @@
 
 function readFiles($name)
 {
-    $fullName = __DIR__ . '/' . $name;
-    if (is_readable($fullName)) {
-        return file($fullName);
+    if (is_readable($name)) {
+        return file($name);
     } else {
         return null;
     }
