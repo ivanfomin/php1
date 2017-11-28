@@ -39,6 +39,8 @@ if (!is_null(getCurrentUser())) {
 <form method="post" action="writeImages.php" enctype="multipart/form-data">
     <input type="file" name="myFile">
     <input type="submit">
+    <br>
+    <a href="logout.php">Выйти</a>
     <?php
     } else {
         ?><a href="login.php">Войти</a>
