@@ -13,6 +13,6 @@ if (isset($_FILES['myFile'])) {
     }
 }
 
-logs(getCurrentUser(), date('Y-m-d'), $_FILES['myFile']['name']);
+logs(getCurrentUser(), date('Y-m-d:H-i'), $_FILES['myFile']['name']);
 
 header('Location: ' . $_SERVER['HTTP_REFERER']);
