@@ -41,8 +41,8 @@ if (!is_null(getCurrentUser())) {
     <input type="submit">
     <?php
     } else {
-    ?><a href="login.php">Войти</a>
-    <?php
+        ?><a href="login.php">Войти</a>
+        <?php
     }
     ?>
 </body>
