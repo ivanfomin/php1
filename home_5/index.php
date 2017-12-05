@@ -36,7 +36,7 @@ include_once "functions.php";
 if (!is_null(getCurrentUser())) {
 ?>
 <h3>Загрузить фото</h3>
-<form method="post" action="writeImages.php" enctype="multipart/form-data">
+<form method="post" action="/writeImages.php" enctype="multipart/form-data">
     <input type="file" name="myFile">
     <input type="submit">
     <br>
