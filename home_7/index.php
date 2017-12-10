@@ -1,7 +1,7 @@
 <?php
 
-include_once 'classess/View.php';
-include_once 'classess/GuestBook.php';
+include_once __DIR__ . '/classess/View.php';
+include_once  __DIR__ . '/classess/GuestBook.php';
 
 $view = new View();
 

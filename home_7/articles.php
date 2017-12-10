@@ -1,7 +1,7 @@
 <?php
-include_once 'classess/Article.php';
-include_once 'classess/News.php';
-include_once 'classess/View.php';
+include_once  __DIR__ . '/classess/Article.php';
+include_once __DIR__ . '/classess/News.php';
+include_once __DIR__ . '/classess/View.php';
 
 $art1 = new Article('Первая статья', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor, nibh sit 
 amet blandit scelerisque, nulla lacus accumsan eros, sed laoreet velit velit a neque. Vestibulum eu aliquet augue, eu ullamcorper lectus.

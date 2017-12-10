@@ -5,7 +5,7 @@
  * Date: 06.12.17
  * Time: 14:35
  */
-include_once 'Article.php';
+include_once __DIR__ . '/Article.php';
 
 class News
 {
