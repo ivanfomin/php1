@@ -16,8 +16,7 @@ function getUsersList()
         $fh = fopen(__DIR__ . '/passwd', 'r');
         while (!feof($fh) && $line = fgets($fh)) {
             $line = trim($line);
-            $info = explode(' : ', $line);
-            $users[] = $info;
+            $users[] = explode(' : ', $line); //
         }
         fclose($fh);
     }
@@ -29,7 +28,7 @@ function existsUser($login)
     $users = getUsersList();
     $flag = false;
     foreach ($users as $user) {
-        if ($user[0] === $login) {
+        if (in_array($login, $user)) {
             $flag = true;
             break;
         }
@@ -42,7 +41,7 @@ function checkPassword($login, $password)
     $users = getUsersList();
     $flag = false;
     foreach ($users as $user) {
-        if ($user[0] === $login) {
+        if (in_array($login, $user)) {
             if (password_verify($password, $user[1])) {
                 $flag = true;
                 break;
