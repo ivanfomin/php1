@@ -9,7 +9,7 @@ class GuestBook
     {
         if (is_readable($path)) {
             $this->path = $path;
-            $this->data = file($path);
+            $this->data = file($path, FILE_IGNORE_NEW_LINES);
         }
     }
 
@@ -20,13 +20,17 @@ class GuestBook
 
     public function append(string $text)
     {
-        $this->data[] = "\n" . $text;
+        $this->data[] = $text;
     }
 
     public function save()
     {
         if (is_writable($this->path)) {
-            file_put_contents($this->path, $this->data);
+            $data = [];
+            foreach ($this->data as $datum) {
+                $data = $datum . PHP_EOL;
+            }
+            file_put_contents($this->path, $data, FILE_APPEND);
         }
     }
 }

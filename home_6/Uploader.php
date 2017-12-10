@@ -9,19 +9,23 @@ class Uploader
         $this->name = $name;
     }
 
-    public function isUploaded()
+    protected function isUploaded()
     {
         if (isset($_FILES[$this->name])) {
             if (0 == $_FILES[$this->name]['error']) {
-                $this->upload();
+                return true;
             }
+        } else {
+            return false;
         }
     }
 
-    protected function upload()
+    public function upload()
     {
-        move_uploaded_file($_FILES[$this->name]['tmp_name'],
-            __DIR__ . '/files/' . $_FILES[$this->name]['name']
-        );
+        if ($this->isUploaded()) {
+            move_uploaded_file($_FILES[$this->name]['tmp_name'],
+                __DIR__ . '/../files/' . $_FILES[$this->name]['name']
+            );
+        }
     }
 }

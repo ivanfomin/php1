@@ -29,7 +29,7 @@ $name = 'myFile';
 $uploader = new Uploader($name);
 ?>
 
-<form method="post" action="<?php $uploader->isUploaded(); ?>" enctype="multipart/form-data">
+<form method="post" action="<?php $uploader->upload(); ?>" enctype="multipart/form-data">
     <input type="file" name=<?php echo $name; ?>>
     <input type="submit">
 </form>
