@@ -31,19 +31,19 @@
     <h3>Конъюнкция</h3>
     <table>
         <tr>
-            <td><?php echo '||'; ?></td>
+            <td>||</td>
             <td>0</td>
             <td>1</td>
         </tr>
         <tr>
             <td>0</td>
-            <td><?php var_dump(0 || 0); ?></td>
-            <td><?php var_dump(0 || 1); ?></td>
+            <td><?php echo (0 || 0) ? 'true' : 'false'; ?></td>
+            <td><?php echo (0 || 1) ? 'true' : 'false'; ?></td>
         </tr>
         <tr>
             <td>1</td>
-            <td><?php var_dump(1 || 0); ?></td>
-            <td><?php var_dump(1 || 1); ?></td>
+            <td><?php echo(1 || 0) ? 'true' : 'false' ; ?></td>
+            <td><?php echo(1 || 1) ? 'true' : 'false'; ?></td>
         </tr>
     </table>
 </div>
@@ -51,19 +51,19 @@
     <h3>Дизъюнкция</h3>
     <table>
         <tr>
-            <td><?php echo '&&'; ?></td>
+            <td>&&</td>
             <td>0</td>
             <td>1</td>
         </tr>
         <tr>
             <td>0</td>
-            <td><?php var_dump(0 && 0); ?></td>
-            <td><?php var_dump(0 && 1); ?></td>
+            <td><?php echo(0 && 0) ? 'true' : 'false'; ?></td>
+            <td><?php echo(0 && 1) ? 'true' : 'false'; ?></td>
         </tr>
         <tr>
             <td>1</td>
-            <td><?php var_dump(1 && 0); ?></td>
-            <td><?php var_dump(1 && 1); ?></td>
+            <td><?php echo(1 && 0) ? 'true' : 'false'; ?></td>
+            <td><?php echo(1 && 1) ? 'true' : 'false'; ?></td>
         </tr>
 
     </table>
@@ -72,19 +72,19 @@
     <h3>Исключающие или</h3>
     <table>
         <tr>
-            <td><?php echo 'xor'; ?></td>
+            <td> xor</td>
             <td>0</td>
             <td>1</td>
         </tr>
         <tr>
             <td>0</td>
-            <td><?php var_dump(0 xor 0); ?></td>
-            <td><?php var_dump(0 xor 1); ?></td>
+            <td><?php echo(0 xor 0) ? 'true' : 'false'; ?></td>
+            <td><?php echo(0 xor 1) ? 'true' : 'false'; ?></td>
         </tr>
         <tr>
             <td>1</td>
-            <td><?php var_dump(1 xor 0); ?></td>
-            <td><?php var_dump(1 xor 1); ?></td>
+            <td><?php echo(1 xor 0) ? 'true' : 'false'; ?></td>
+            <td><?php echo(1 xor 1) ? 'true' : 'false'; ?></td>
         </tr>
     </table>
 </div>
@@ -95,23 +95,13 @@
 <?php
 function disc($a, $b, $c)
 {
-    if ($a == 0) {
-        return null;    //на ноль делить нельзя
-    }
-    $d = $b * $b - 4 * $a * $c;
-    if ($d < 0) {
-        return null;    //нет решений
-    }
-    $x1 = (-$b + sqrt($d)) / 2 * $a;
-    $x2 = (-$b - sqrt($d)) / 2 * $a;
-
-    return [$x1, $x2];
+    return $b * $b - 4 * $a * $c;
 }
 
-var_dump(disc(1, 3, 2));  //array(2) { [0]=> float(-1) [1]=> float(-2) }
-var_dump(disc(1, 2, 3));  //NULL
-var_dump(disc(2, -4, 2));   //array(2) { [0]=> float(4) [1]=> float(4) }
-//assert у себя на ubuntu что-то не получается задействовать
+assert(disc(1, 3, 2) == 1); //true
+assert(disc(1, 2, 3) == -8);    //true
+assert(disc(2, -4, 2) == 0);    //true
+
 ?>
 
 <!---------------------------------------------------------->
@@ -143,8 +133,9 @@ echo gender('Марина');  //female
 echo gender('Катя');    //female
 echo gender('Борис');   //male
 echo gender('Алексей');   //male
-var_dump( gender("Окунь"));   //NULL
-
+assert( gender("Окунь") == null);   //true
+assert( gender("Маша") == 'female');   //true
+assert( gender("Николай") == 'female'); //false
 ?>
 </body>
 </html>
