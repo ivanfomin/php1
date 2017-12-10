@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once "functions.php";
+include_once __DIR__ . "/functions.php";
 
 if (isset($_FILES['myFile'])) {
     if (0 == $_FILES['myFile']['error']) {

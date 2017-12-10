@@ -3,7 +3,7 @@ session_start();
 if (isset($_SESSION['login'])) {
     header("Location: index.php");
 }
-include_once "functions.php";
+include_once __DIR__ . "/functions.php";
 
 if (isset($_POST['login']) && isset($_POST['password_1']) && isset($_POST['password_2'])) {
     if (existsUser($_POST['login'])) {
