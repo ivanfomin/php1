@@ -1,6 +1,6 @@
 <?php
-include_once 'GuestBook.php';
-include_once 'Uploader.php';
+include_once __DIR__ . '/GuestBook.php';
+include_once __DIR__ . '/Uploader.php';
 
 $book = new GuestBook(__DIR__ . '/guestBook.txt');
 
