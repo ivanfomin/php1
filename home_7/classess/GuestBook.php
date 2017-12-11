@@ -21,13 +21,13 @@ class GuestBook
 
     public function append(string $text)
     {
-        $this->data[] = "\n" . $text;
+        $this->data[] = $text;
     }
 
     public function save()
     {
         if (is_writable($this->path)) {
-            file_put_contents($this->path, $this->data);
+            file_put_contents($this->path, implode(PHP_EOL, $this->data));
         }
     }
 }

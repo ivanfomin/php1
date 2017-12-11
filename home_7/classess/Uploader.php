@@ -22,9 +22,9 @@ class Uploader
 
     public function upload()
     {
-        if($this->isUploaded()) {
+        if ($this->isUploaded()) {
             move_uploaded_file($_FILES[$this->name]['tmp_name'],
-                __DIR__ . '/../files/' . $_FILES[$this->name]['name']
+                __DIR__ . '/../images/' . $_FILES[$this->name]['name']
             );
         }
     }

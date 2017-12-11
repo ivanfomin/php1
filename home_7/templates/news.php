@@ -17,7 +17,7 @@ $_SESSION['data'] = $this->data;
 foreach ($this->data as $article) {
     $_SESSION['data'][$article->getid()] = serialize($article); //как вариант записывать объекты в сессию и обходится без файлов
     ?>
-    <h3><a href="/templates/alterShowArt.php?id=<?php echo $article->getId(); ?>"><?php echo $article->getTitle(); ?></a>
+    <h3><a href="/templates/article.php?id=<?php echo $article->getId(); ?>"><?php echo $article->getTitle(); ?></a>
     </h3>
     <p> <?php echo substr($article->getContent(), 0, 20); ?></p>
     <?php

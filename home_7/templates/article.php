@@ -11,4 +11,4 @@ if (isset($_GET['id'])) {
 }
 
 ?>
-<a href="/articles.php">Вернуться</a>
+<a href="/index.php">Вернуться</a>
