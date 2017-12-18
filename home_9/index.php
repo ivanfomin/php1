@@ -1,13 +1,14 @@
 <?php
 require __DIR__ . '/autoload.php';
 
+$contr = new App\Contr();
 $book = new \App\Models\GuestBook();
-$records = $book->getRecords();
+$contr->setRecords($book->getRecords());
 $about = new \App\Models\About();
-$about = $about->getRecords()[0];
+$contr->setAbout($about->getFirst());
 $image = new \App\Models\Image();
-$images = $image->getImages();
+$contr->setImages($image->getImages());
 
 
-$view = new \App\Views\View($records, $images, $about);
-$view->display('show.php');
+$view = new \App\Views\View($contr);
+$view->display(__DIR__ . '/templates/show.php');

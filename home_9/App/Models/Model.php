@@ -20,10 +20,15 @@ class Model
         $this->db = \App\DB::getInstance();
     }
 
-    public function getRecords()
+    public function getRecords() :array
     {
         $sql = 'SELECT * FROM ' . $this->table;
         return $this->db->query($sql);
+    }
+
+    public function getFirst()
+    {
+        return $this->getRecords()[0];
     }
 
 }

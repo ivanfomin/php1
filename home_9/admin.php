@@ -1,12 +1,14 @@
 <?php
 require __DIR__ . '/autoload.php';
 
+$contr = new App\Contr();
 $book = new \App\Models\GuestBook();
-$records = $book->getRecords();
+$contr->setRecords($book->getRecords());
 $image = new \App\Models\Image();
-$images = $image->getImages();
+$contr->setImages($image->getImages());
 
-$view = new \App\Views\View($records, $images);
-$view->display('adminPanel.php');
+
+$view = new \App\Views\View($contr);
+$view->display(__DIR__ . '/templates/adminPanel.php');
 
 

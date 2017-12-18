@@ -9,21 +9,23 @@
 namespace App\Views;
 
 
+use App\Contr;
+
 class View
 {
     protected $records = [];
     protected $images = [];
     protected $aboutMe;
 
-    public function __construct($records = [], $images = [], $about = '')
+    public function __construct(Contr $contr)
     {
-        $this->records = $records;
-        $this->images = $images;
-        $this->aboutMe = $about;
+        $this->records = $contr->getRecords();
+        $this->images = $contr->getImages();
+        $this->aboutMe = $contr->getAbout();
     }
 
     public function display($template)
     {
-        include_once __DIR__ . '/../../templates/' . $template;
+        include_once $template;
     }
 }
