@@ -8,8 +8,7 @@ include_once __DIR__ . '/classess/News.php';
 $book = new GuestBook();
 $book->append('Hello world!');
 $viewBook = new View($book->getData());
-$viewBook->display('index.php');    //отображаем содержимое гостевой книги
-$viewBook->upload('upload.php', 'myFile');  //загрузка изображения на сервер
+$viewBook->display(__DIR__ . '/show.php');    //отображаем содержимое гостевой книги
 
 $art1 = new Article('Первая статья', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor, nibh sit 
 amet blandit scelerisque, nulla lacus accumsan eros, sed laoreet velit velit a neque. Vestibulum eu aliquet augue, eu ullamcorper lectus.
@@ -33,4 +32,4 @@ $news->setArticles($art2);
 $news->setArticles($art3);
 
 $view = new View($news->getArticles());
-$view->display('news.php');
+$view->display(__DIR__ . '/news.php');

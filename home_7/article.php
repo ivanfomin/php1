@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once __DIR__ . '/../classess/Article.php';
+include_once __DIR__ . '/classess/Article.php';
 
 if (isset($_GET['id'])) {
     $art = unserialize($_SESSION['data'][$_GET['id']]);

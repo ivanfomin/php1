@@ -8,8 +8,6 @@
 
 class Article
 {
-    protected static $id = 0;
-    protected $myId;
     protected static $arr = [];
     protected $title;
     protected $content;
@@ -23,13 +21,12 @@ class Article
     {
         $this->title = $title;
         $this->content = $content;
-        $this->myId = self::$id++;
         $this->writeToFile();
     }
 
     protected function writeToFile()
     {
-        $name = __DIR__ . '/../articles/' . $this->myId;
+        $name = __DIR__ . '/../articles/' . $this->title;
         file_put_contents($name, $this->content);
     }
 
@@ -64,14 +61,5 @@ class Article
     {
         $this->content = $content;
     }
-
-    /**
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->myId;
-    }
-
 
 }
