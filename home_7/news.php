@@ -13,16 +13,17 @@ session_start();
 </head>
 <body>
 <?php
-$_SESSION['data'] = $this->data;
-foreach ($this->data as $article) {
-    $_SESSION['data'][$article->getTitle()] = serialize($article); //как вариант записывать объекты в сессию и обходится без файлов
-    ?>
-    <h3><a href="/article.php?id=<?php echo $article->getTitle(); ?>"><?php echo $article->getTitle(); ?></a>
-    </h3>
-    <p> <?php echo substr($article->getContent(), 0, 20); ?></p>
-    <?php
+foreach ($this->data as $news) {
+    foreach ($news->getArticles() as $article) {
+        ?>
+        <h3><a href="/article.php?id=<?php echo $article->getId(); ?>"><?php echo $article->getTitle(); ?></a>
+        </h3>
+        <p> <?php echo substr($article->getContent(), 0, 20); ?></p>
+        <?php
+    }
 }
 ?>
+
 </body>
 </html>
 

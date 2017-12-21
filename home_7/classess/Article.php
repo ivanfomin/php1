@@ -8,9 +8,12 @@
 
 class Article
 {
-    protected static $arr = [];
     protected $title;
     protected $content;
+    protected $path = __DIR__ . '/../articles/';
+    protected static $count = 0;
+    protected $id;
+
 
     /**
      * Article constructor.
@@ -19,6 +22,7 @@ class Article
      */
     public function __construct(string $title, string $content)
     {
+        $this->id = static::$count++;
         $this->title = $title;
         $this->content = $content;
         $this->writeToFile();
@@ -26,8 +30,7 @@ class Article
 
     protected function writeToFile()
     {
-        $name = __DIR__ . '/../articles/' . $this->title;
-        file_put_contents($name, $this->content);
+        file_put_contents($this->path . $this->getId() . '.txt', $this->title . PHP_EOL . $this->content);
     }
 
     /**
@@ -60,6 +63,14 @@ class Article
     public function setContent(string $content): void
     {
         $this->content = $content;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
     }
 
 }
