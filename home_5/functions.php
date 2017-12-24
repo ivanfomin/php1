@@ -14,7 +14,8 @@ function getUsersList()
     $users = [];
     if (is_readable(__DIR__ . '/passwd')) {
         $fh = fopen(__DIR__ . '/passwd', 'r');
-        while (!feof($fh) && $line = fgets($fh)) {
+        while (!feof($fh)) {
+            $line = fgets($fh);
             $line = trim($line);
             $users[] = explode(' : ', $line); //
         }

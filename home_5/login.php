@@ -1,14 +1,14 @@
 <?php
 session_start();
 if (isset($_SESSION['login'])) {
-    header("Location: index.php");
+    header("Location: http://localhost:4001");
 }
 include_once __DIR__ . "/functions.php";
 
 if (isset($_POST['login']) && isset($_POST['password'])) {
     if (checkPassword($_POST['login'], $_POST['password'])) {
         $_SESSION['login'] = $_POST['login'];
-        header("Location: index.php");
+        header("Location: http://localhost:4001");
     }
     else {
         echo 'Не правильная пара логин - пароль';
@@ -32,6 +32,6 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
     <br>
     <input type="submit" value="Log in">
 </form>
-<a href="register.php">Зарегистрироваться</a>
+<a href="/register.php">Зарегистрироваться</a>
 </body>
 </html>
