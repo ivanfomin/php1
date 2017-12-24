@@ -27,7 +27,7 @@ include_once __DIR__ . "/functions.php";
     $images = arrFiles(__DIR__ . '/images');
     foreach ($images as $image) {
         ?>
-        <li><img src="images/<?php echo $image; ?>"></li>
+        <li><img src="/images/<?php echo $image; ?>"></li>
         <?php
     }
     ?>
@@ -40,10 +40,10 @@ if (!is_null(getCurrentUser())) {
     <input type="file" name="myFile">
     <input type="submit">
     <br>
-    <a href="logout.php">Выйти</a>
+    <a href="/logout.php">Выйти</a>
     <?php
     } else {
-        ?><a href="login.php">Войти</a>
+        ?><a href="/login.php">Войти</a>
         <?php
     }
     ?>

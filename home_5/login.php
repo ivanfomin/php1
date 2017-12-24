@@ -3,6 +3,7 @@ session_start();
 if (isset($_SESSION['login'])) {
     header("Location: http://localhost:4001");
 }
+
 include_once __DIR__ . "/functions.php";
 
 if (isset($_POST['login']) && isset($_POST['password'])) {
