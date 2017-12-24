@@ -1,7 +1,8 @@
 <?php
 session_start();
 if (isset($_SESSION['login'])) {
-    header("Location: index.php");
+    header("Location: http://localhost:4001");
+
 }
 include_once __DIR__ . "/functions.php";
 
@@ -12,7 +13,8 @@ if (isset($_POST['login']) && isset($_POST['password_1']) && isset($_POST['passw
         echo 'Пароли не совпадают!';
     } else {
         saveUser($_POST['login'], $_POST['password_1']);
-        header("Location: login.php");
+        header("Location: http://localhost:4001");
+
     }
 }
 ?>
