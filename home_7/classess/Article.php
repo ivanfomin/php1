@@ -10,7 +10,7 @@ class Article
 {
     protected $title;
     protected $content;
-    protected $path = __DIR__ . '/../articles/';
+    protected $path = __DIR__ . '/../articles/';    //директории где хранятся статьи, как отдельные файлы
     protected static $count = 0;
     protected $id;
 

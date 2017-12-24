@@ -13,8 +13,8 @@ session_start();
 </head>
 <body>
 <?php
-foreach ($this->data as $news) {
-    foreach ($news->getArticles() as $article) {
+foreach ($this->data as $articles) {    //$this->data[] массив класса View
+    foreach ($articles as $article) {
         ?>
         <h3><a href="/article.php?id=<?php echo $article->getId(); ?>"><?php echo $article->getTitle(); ?></a>
         </h3>
