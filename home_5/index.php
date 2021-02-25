@@ -20,7 +20,7 @@ include_once __DIR__ . "/functions.php";
 </head>
 <body>
 <h2>
-    Привет <?php echo getCurrentUser(); ?>
+    Привет <?php echo getCurrentUser() ?? 'Гость'; ?>
 </h2>
 <ul>
     <?php

@@ -6,9 +6,13 @@ if (isset($_SESSION['login'])) {
 include_once __DIR__ . "/functions.php";
 
 if (isset($_POST['login']) && isset($_POST['password_1']) && isset($_POST['password_2'])) {
+
     if (existsUser($_POST['login'])) {
         echo 'Логин уже занят!';
-    } elseif ($_POST['password_1'] !== $_POST['password_2']) {
+    } elseif ((empty($_POST['password_1'])) || (empty($_POST['password_2']))) {
+        echo 'Пароль не может быть пустым!';
+    }
+    elseif ($_POST['password_1'] !== $_POST['password_2']) {
         echo 'Пароли не совпадают!';
     } else {
         saveUser($_POST['login'], $_POST['password_1']);

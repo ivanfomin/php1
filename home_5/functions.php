@@ -1,4 +1,6 @@
 <?php
+
+
 function saveUser($login, $password)
 {
     if (is_writable(__DIR__ . '/passwd')) {
@@ -9,7 +11,7 @@ function saveUser($login, $password)
     }
 }
 
-function getUsersList()
+function getUsers()
 {
     $users = [];
     if (is_readable(__DIR__ . '/passwd')) {
@@ -23,32 +25,60 @@ function getUsersList()
     return $users;
 }
 
+function getUsersList()
+{
+    $passwd = __DIR__ . '/passwd';
+
+    $users = file($passwd);
+
+    $arr = [];
+    foreach ($users as $user) {
+        [$key, $value] = explode(':', $user);
+
+        $arr[trim($key)] = trim($value);
+    }
+
+    return $arr;
+}
+
 function existsUser($login)
 {
+
     $users = getUsersList();
-    $flag = false;
-    foreach ($users as $user) {
-        if (in_array($login, $user)) {
-            $flag = true;
-            break;
-        }
-    }
-    return $flag;
+
+//    $flag = false;
+//    foreach ($users as $user) {
+//        if (in_array($login, $user)) {
+//            $flag = true;
+//            break;
+//        }
+//    }
+//    return $flag;
+
+    if (isset($users[$login])) {
+        return true;
+    } else return false;
+
 }
 
 function checkPassword($login, $password)
 {
     $users = getUsersList();
-    $flag = false;
-    foreach ($users as $user) {
-        if (in_array($login, $user)) {
-            if (password_verify($password, $user[1])) {
-                $flag = true;
-                break;
-            }
-        }
-    }
-    return $flag;
+//    $flag = false;
+//    foreach ($users as $user) {
+//        if (in_array($login, $user)) {
+//            if (password_verify($password, $user[1])) {
+//                $flag = true;
+//                break;
+//            }
+//        }
+//    }
+//    return $flag;
+    if (isset($users[$login])) {
+        if (password_verify($password, $users[$login]))
+            return true;
+    } else return false;
+
 }
 
 function getCurrentUser()

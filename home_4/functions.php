@@ -11,3 +11,10 @@ function readGuestBook()
     }
 
 }
+
+function arrFiles($path)
+{
+    $files = scandir($path);
+    return array_diff($files, ['.', '..']);
+
+}

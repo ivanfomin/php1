@@ -26,7 +26,7 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
 </head>
 <body>
 <form method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
-    Logion: <input type="text" name="login">
+    Login: <input type="text" name="login">
     <br>
     Password: <input type="password" name="password">
     <br>
