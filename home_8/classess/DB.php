@@ -8,7 +8,7 @@ class DB
     public function __construct()
     {
         $config = parse_ini_file($this->path);
-        $this->dbh = new PDO($config['driver'] . ':host=' . $config['host'] . ';dbname=' . $config['dbname'], 'root', '321');
+        $this->dbh = new PDO($config['driver'] . ':host=' . $config['host'] . ';dbname=' . $config['dbname'], 'root', 'root');
     }
 
     public function execute(string $sql)

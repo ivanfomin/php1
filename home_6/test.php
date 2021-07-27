@@ -6,7 +6,7 @@ $book = new GuestBook(__DIR__ . '/guestBook.txt');
 
 var_dump($book->getData());
 
-$book->append('How are You? ');
+$book->append('How are You Today?');
 
 var_dump($book->getData());
 

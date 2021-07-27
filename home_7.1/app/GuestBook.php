@@ -30,4 +30,5 @@ class GuestBook
             file_put_contents($this->path, end($this->data) . PHP_EOL , FILE_APPEND );
         }
     }
+
 }

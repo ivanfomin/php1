@@ -11,4 +11,5 @@ if (isset($_GET['id'])) {
     }
 } ?>
 <br>
-<a href="/index.php">Вернуться</a>
+<a href="#" onclick="history.back();">Назад</a>
+
