@@ -12,10 +12,11 @@
     <?php
     foreach ($this->data as $name => $value) {
         ?>
-        <li> <?php
-            echo $name . ' = ' . $value;
-            ?>
-        </li> <?php
+        <li>
+        <a href="article.php?art=<?= $name ?>"> <?= $name ?></h1> </a>
+        </li>
+        <br>
+        <?php
     }
     ?>
 </ul>

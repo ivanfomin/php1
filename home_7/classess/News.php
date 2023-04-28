@@ -9,22 +9,20 @@ include_once __DIR__ . '/Article.php';
 
 class News
 {
-    protected $articles = [];
+
+    protected $articles = __DIR__ . '/../articles/';
 
     /**
      * @return array
      */
-    public function getArticles(): array
+    public function __invoke(): array
     {
-        return $this->articles;
-    }
-
-    /**
-     * @param array $articles
-     */
-    public function setArticles(Article $article): void
-    {
-        $this->articles[] = $article;
+        $files = [];
+        $titles =  array_diff(scandir($this->articles), ['.', '..']);
+        foreach ($titles as $title) {
+            $files[$title] = file_get_contents($this->articles . $title);
+        }
+        return $files;
     }
 
 }
