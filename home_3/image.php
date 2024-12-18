@@ -6,6 +6,6 @@ if (0 != $number) {
     ?>
     <img src="images/<?php echo $number . '.jpg'; ?>">
     <br>
-    <a href="index.html">Назад</a>
+    <a href="gallery.php">Назад</a>
     <?php
 }

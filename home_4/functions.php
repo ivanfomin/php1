@@ -6,15 +6,12 @@ function readGuestBook()
 
     if (is_readable($name)) {
         return file($name);
-    } else {
-        return null;
     }
-
+    return null;
 }
 
 function arrFiles($path)
 {
     $files = scandir($path);
     return array_diff($files, ['.', '..']);
-
 }

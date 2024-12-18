@@ -8,21 +8,24 @@
 
 class Article
 {
+    protected $id;
     protected $title;
+    protected $author;
     protected $content;
-    /**
+    /**php1
      * Article constructor.
-     * @param $title
-     * @param $content
+     * @param string $title
+     * @param string $content
+     * @param ?string $author
      */
-    public function __construct(string $title, string $content)
+    public function __construct(string $title, string $content, string $author = null)
     {
         $this->title = $title;
         $this->content = $content;
-        $this->writeToFile();
+        $this->author = $author;
     }
 
-    protected function writeToFile()
+    public function writeToFile(): void
     {
         $name = __DIR__ . '/../articles/' . $this->title;
         file_put_contents($name, $this->content);
