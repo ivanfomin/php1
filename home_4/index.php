@@ -20,7 +20,6 @@ include_once __DIR__ . '/functions.php';
 <body>
 
 <?php
-var_dump($_COOKIE);
 $lists = readGuestBook();
 if (!is_null($lists)) {
     ?>
@@ -39,7 +38,7 @@ if (!is_null($lists)) {
 }
 ?>
 
-<form method="post" action="/writeFile.php">
+<form method="post" action="writeFile.php">
     <input type="text" name="record">
     <input type="submit">
 </form>
@@ -60,7 +59,7 @@ if (!is_null($lists)) {
         ?>
     </ul>
 </div>
-<form method="post" action="/writeImage.php" enctype="multipart/form-data">
+<form method="post" action="writeImage.php" enctype="multipart/form-data">
     <input type="file" name="myFile">
     <input type="submit">
 </form>

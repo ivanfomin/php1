@@ -9,13 +9,15 @@
 </head>
 <body>
 <?php
-foreach ($this->data as $article) {
-    ?> <a href="/templates/article.php?id=<?php echo $article['id']; ?>"><h3><?php echo $article['title']; ?></h3></a>
-    <article><?php echo $article['text']; ?></article>
-    <cite><?php echo $article['author']; ?></cite>
-    <?php
-}
+
+
+foreach ($this->data as $article) :
+    ?> <a href="/templates/article.php?id=<?php echo $article->getId(); ?>">
+        <h3><?php echo $article->getTitle(); ?></h3>
+    </a>
+
+<?php
+endforeach;
 ?>
 </body>
 </html>
-

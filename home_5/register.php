@@ -31,13 +31,13 @@ if (isset($_POST['login']) && isset($_POST['password_1']) && isset($_POST['passw
 </head>
 <body>
 <form method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
-    Logion: <input type="text" name="login">
+    Имя: <input type="text" name="login">
     <br>
-    Password: <input type="password" name="password_1">
+    Пароль: <input type="password" name="password_1">
     <br>
-    Repeat Password: <input type="password" name="password_2">
+    Повтор пароля: <input type="password" name="password_2">
     <br>
-    <input type="submit" value="Reg in">
+    <input type="submit" value="Регистация">
 </form>
 </body>
 </html>

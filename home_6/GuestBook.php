@@ -26,11 +26,7 @@ class GuestBook
     public function save()
     {
         if (is_writable($this->path)) {
-            $data = [];
-            foreach ($this->data as $datum) {
-                $data = $datum . PHP_EOL;
-            }
-            file_put_contents($this->path, $data, FILE_APPEND);
+            file_put_contents($this->path, implode(PHP_EOL, $this->data));
         }
     }
 }

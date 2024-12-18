@@ -3,7 +3,7 @@
 
 include_once __DIR__ . '/autoload.php';
 
-$news = new News();
+$news = new MyNews();
 
 $view = new View($news());
 

@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . '/functions.php';
 session_start();
 if (isset($_SESSION['login'])) {
     header("Location: index.php");
@@ -26,11 +27,11 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
 </head>
 <body>
 <form method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
-    Login: <input type="text" name="login">
+    Имя: <input type="text" name="login">
     <br>
-    Password: <input type="password" name="password">
+    Пароль: <input type="password" name="password">
     <br>
-    <input type="submit" value="Log in">
+    <input type="submit" value="Войти">
 </form>
 <a href="register.php">Зарегистрироваться</a>
 </body>

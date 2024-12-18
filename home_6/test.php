@@ -25,12 +25,13 @@ $book->save();
 <body>
 
 <?php
-$name = 'myFile';
+$name = 'myFile.png';
 $uploader = new Uploader($name);
+var_dump($uploader);
 ?>
 
-<form method="post" action="<?php $uploader->upload(); ?>" enctype="multipart/form-data">
-    <input type="file" name=<?php echo $name; ?>>
+<form method="post" action="writeImage.php" enctype="multipart/form-data">
+    <input type="file" name="myFile">
     <input type="submit">
 </form>
 

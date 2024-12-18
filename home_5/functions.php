@@ -31,13 +31,15 @@ function getUsersList()
 
     $users = file($passwd);
 
+    var_dump($users);
+
     $arr = [];
     foreach ($users as $user) {
         [$key, $value] = explode(':', $user);
 
         $arr[trim($key)] = trim($value);
     }
-
+    var_dump($arr);
     return $arr;
 }
 
@@ -57,7 +59,8 @@ function existsUser($login)
 
     if (isset($users[$login])) {
         return true;
-    } else return false;
+    }
+    return false;
 
 }
 
@@ -77,7 +80,8 @@ function checkPassword($login, $password)
     if (isset($users[$login])) {
         if (password_verify($password, $users[$login]))
             return true;
-    } else return false;
+    }
+      return false;
 
 }
 
